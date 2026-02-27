@@ -1,3 +1,5 @@
 <Solution>
-  <Project Path="FxWallet.csproj" />
+  <Folder Name="/src/">
+    <Project Path="src/FxWallet.Api/FxWallet.Api.csproj" />
+  </Folder>
 </Solution>
