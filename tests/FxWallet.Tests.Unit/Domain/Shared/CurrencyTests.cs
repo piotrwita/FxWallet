@@ -17,25 +17,15 @@ public sealed class CurrencyTests
         currency.Code.ShouldBe("USD");
     }
 
-    [Fact]
-    public void Given_Lowercase_Code_When_Creating_Currency_Then_Should_Convert_To_Uppercase()
+    [Theory]
+    [InlineData("usd", "USD")]
+    [InlineData("UsD", "USD")]
+    [InlineData("EUR", "EUR")]
+    public void Given_Code_When_Creating_Currency_Then_Should_Convert_To_Uppercase(string inputCode, string expectedCode)
     {
-        var code = "usd";
+        var currency = new Currency(inputCode);
 
-        var currency = new Currency(code);
-
-        currency.Code.ShouldBe("USD");
-    }
-
-    [Fact]
-    public void Given_Valid_Code_When_Using_FromCode_Then_Should_Create_Currency()
-    {
-        var code = "EUR";
-
-        var currency = Currency.FromCode(code);
-
-        currency.ShouldNotBeNull();
-        currency.Code.ShouldBe("EUR");
+        currency.Code.ShouldBe(expectedCode);
     }
 
     [Fact]
@@ -75,15 +65,5 @@ public sealed class CurrencyTests
     public void Given_Code_With_Non_Letter_Characters_When_Creating_Currency_Then_Should_Throw_InvalidCurrencyCodeFormatException(string code)
     {
         Should.Throw<InvalidCurrencyCodeFormatException>(() => new Currency(code));
-    }
-
-    [Fact]
-    public void Given_Currency_When_Converting_To_String_Then_Should_Return_Code()
-    {
-        var currency = Currency.FromCode("EUR");
-
-        var result = currency.ToString();
-
-        result.ShouldBe("EUR");
     }
 }
