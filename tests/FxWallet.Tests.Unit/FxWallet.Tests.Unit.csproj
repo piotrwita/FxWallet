@@ -24,6 +24,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\FxWallet.Domain\FxWallet.Domain.csproj" />
+    <ProjectReference Include="..\..\src\FxWallet.Infrastructure\FxWallet.Infrastructure.csproj" />
   </ItemGroup>
 
   <ItemGroup>
