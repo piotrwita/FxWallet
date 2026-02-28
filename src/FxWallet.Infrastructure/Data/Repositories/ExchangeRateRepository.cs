@@ -14,7 +14,7 @@ internal sealed class ExchangeRateRepository(FxWalletDbContext dbContext) : IExc
         var exchangeRate = await dbContext.ExchangeRates
             .Where(e => e.FromCurrencyCode == currency.Code && e.ToCurrencyCode == Currency.PLN.Code)
             .OrderByDescending(e => e.EffectiveDate)
-            .ThenByDescending(e => e.FetchedAt)
+            .ThenByDescending(e => e.CreatedAt)
             .FirstOrDefaultAsync(cancellationToken);
 
         if (exchangeRate is null)

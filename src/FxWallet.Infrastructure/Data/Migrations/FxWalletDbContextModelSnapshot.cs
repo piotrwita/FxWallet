@@ -34,9 +34,6 @@ namespace FxWallet.Infrastructure.Migrations
                     b.Property<DateOnly>("EffectiveDate")
                         .HasColumnType("date");
 
-                    b.Property<DateTime>("FetchedAt")
-                        .HasColumnType("timestamp with time zone");
-
                     b.Property<string>("FromCurrencyCode")
                         .IsRequired()
                         .HasMaxLength(3)

@@ -7,6 +7,5 @@ internal sealed class ExchangeRateDbModel
     public string ToCurrencyCode { get; set; } = string.Empty;
     public decimal Rate { get; set; }
     public DateOnly EffectiveDate { get; set; }
-    public DateTime FetchedAt { get; set; } = DateTime.UtcNow;
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
 }

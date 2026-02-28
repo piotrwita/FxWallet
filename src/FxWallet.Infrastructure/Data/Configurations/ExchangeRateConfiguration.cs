@@ -27,9 +27,6 @@ internal sealed class ExchangeRateConfiguration : IEntityTypeConfiguration<Excha
         builder.Property(e => e.EffectiveDate)
             .IsRequired();
 
-        builder.Property(e => e.FetchedAt)
-            .IsRequired();
-
         builder.Property(e => e.CreatedAt)
             .IsRequired();
 

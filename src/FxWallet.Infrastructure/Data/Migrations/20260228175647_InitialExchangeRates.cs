@@ -20,7 +20,6 @@ namespace FxWallet.Infrastructure.Migrations
                     ToCurrencyCode = table.Column<string>(type: "character varying(3)", maxLength: 3, nullable: false),
                     Rate = table.Column<decimal>(type: "numeric(18,6)", precision: 18, scale: 6, nullable: false),
                     EffectiveDate = table.Column<DateOnly>(type: "date", nullable: false),
-                    FetchedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false),
                     CreatedAt = table.Column<DateTime>(type: "timestamp with time zone", nullable: false)
                 },
                 constraints: table =>
