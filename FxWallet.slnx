@@ -1,5 +1,11 @@
 <Solution>
   <Folder Name="/src/">
     <Project Path="src/FxWallet.Api/FxWallet.Api.csproj" />
+    <Project Path="src/FxWallet.Application/FxWallet.Application.csproj" />
+    <Project Path="src/FxWallet.Domain/FxWallet.Domain.csproj" />
+    <Project Path="src/FxWallet.Infrastructure/FxWallet.Infrastructure.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/FxWallet.Tests.Unit/FxWallet.Tests.Unit.csproj" />
   </Folder>
 </Solution>
