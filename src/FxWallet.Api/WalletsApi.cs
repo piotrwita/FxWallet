@@ -1,4 +1,3 @@
-using FxWallet.Api.Requests;
 using FxWallet.Application.Abstractions;
 using FxWallet.Application.Wallets.Commands;
 using FxWallet.Application.Wallets.Dtos;
