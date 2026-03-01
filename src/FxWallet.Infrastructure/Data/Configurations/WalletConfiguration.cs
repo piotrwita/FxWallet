@@ -1,4 +1,3 @@
-using FxWallet.Domain.Wallets;
 using FxWallet.Infrastructure.Data.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
@@ -13,13 +12,9 @@ internal sealed class WalletConfiguration : IEntityTypeConfiguration<WalletDbMod
 
         builder.HasKey(w => w.Id);
 
-        builder.Property(w => w.Name)
+        builder.Property(w => w.WalletObject)
             .IsRequired()
-            .HasMaxLength(WalletName.MaxLength);
-
-        builder.Property(w => w.BalancesJson)
-            .IsRequired()
-            .HasDefaultValue("[]");
+            .HasDefaultValue("{}");
 
         builder.Property(w => w.CreatedAt)
             .IsRequired();

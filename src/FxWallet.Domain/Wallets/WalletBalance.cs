@@ -4,7 +4,9 @@ namespace FxWallet.Domain.Wallets;
 
 public sealed class WalletBalance
 {
-    public Money Balance { get; private set; }
+    public Money Balance { get; private set; } = null!;
+
+    private WalletBalance() { }
 
     private WalletBalance(Money balance)
     {

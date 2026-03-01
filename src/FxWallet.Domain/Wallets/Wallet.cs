@@ -6,10 +6,14 @@ namespace FxWallet.Domain.Wallets;
 
 public sealed class Wallet
 {
-    public WalletId Id { get; private init; }
-    public WalletName Name { get; private set; }
+    public WalletId Id { get; private init; } = null!;
+    public WalletName Name { get; private set; } = null!;
+
     private readonly List<WalletBalance> _balances = [];
+    
     public IReadOnlyList<WalletBalance> Balances => _balances.AsReadOnly();
+
+    private Wallet() { }
 
     private Wallet(WalletId id, WalletName name, List<WalletBalance> balances)
     {
