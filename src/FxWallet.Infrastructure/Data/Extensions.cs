@@ -1,4 +1,5 @@
 using FxWallet.Domain.ExchangeRates;
+using FxWallet.Domain.Wallets;
 using FxWallet.Infrastructure.Data.Repositories;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
@@ -17,6 +18,7 @@ public static class Extensions
         services.AddDbContext<FxWalletDbContext>(options => options.UseNpgsql(connectionString));
 
         services.AddScoped<IExchangeRateRepository, ExchangeRateRepository>();
+        services.AddScoped<IWalletRepository, WalletRepository>();
 
         return services;
     }

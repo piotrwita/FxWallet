@@ -6,6 +6,7 @@ namespace FxWallet.Infrastructure.Data;
 internal sealed class FxWalletDbContext(DbContextOptions<FxWalletDbContext> options) : DbContext(options)
 {
     public DbSet<ExchangeRateDbModel> ExchangeRates { get; set; } = null!;
+    public DbSet<WalletDbModel> Wallets { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
