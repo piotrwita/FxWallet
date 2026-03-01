@@ -5,7 +5,9 @@ namespace FxWallet.Domain.Shared;
 public sealed record Money
 {
     public decimal Amount { get; private init; }
-    public Currency Currency { get; private init; }
+    public Currency Currency { get; private init; } = null!;
+
+    private Money() { }
 
     private Money(decimal amount, Currency currency)
     {
