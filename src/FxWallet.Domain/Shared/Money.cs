@@ -51,16 +51,4 @@ public sealed record Money
 
         return Create(result, Currency);
     }
-
-    public static Money operator +(Money left, Money right)
-    {
-        ArgumentNullException.ThrowIfNull(left);
-        return left.Add(right);
-    }
-
-    public static Money operator -(Money left, Money right)
-    {
-        ArgumentNullException.ThrowIfNull(left);
-        return left.Subtract(right);
-    }
 }
